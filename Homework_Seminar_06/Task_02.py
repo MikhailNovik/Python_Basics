@@ -4,13 +4,12 @@
 
 import random
 
-# user = input(f'Введите \n'
-#              f'()\n'
-#              f'или введите "cтоп" для завершения программы\n'
-#              f': ').lower()
+# N = input(f'Введите трехзначное натуральное число: ')
+N = str(277)
+numbers = ''.join([str(random.randint(1, 9)) for _ in range(15)])
+print(f'Список случайных чисел: {list(map(int, numbers))}')
 
-# n = [random.randint(0, 10) for el in range(length)]
-# p = ''.join([string[random.randint(0, len(string) - 1)] for _ in range(length)])
-
-# print(f'{=}')
-# print(f'{=} {}')
+if N in numbers:
+    print(f'В списке случайных цифр есть последовательность, совпадающая с введенным числом {N}')
+else:
+    print(f'В списке случайных цифр нет последовательности, совпадающей с введенным числом {N}')
