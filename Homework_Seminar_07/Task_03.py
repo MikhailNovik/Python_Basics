@@ -4,7 +4,8 @@ import telebot
 import requests
 import random
 
-bot = telebot.TeleBot("6216302751:AAGHbz4pORQaBOA3pDi8iDBIjVROrA_J3Rs")
+token = ''
+bot = telebot.TeleBot(token)
 storage = dict()
 
 
