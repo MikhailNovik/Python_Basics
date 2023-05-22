@@ -1,17 +1,18 @@
-# Задача 36: Напишите функцию print_operation_table(operation, num_rows=6, num_columns=6), 
-# которая принимает в качестве аргумента функцию, вычисляющую элемент по номеру строки и столбца. 
-# Аргументы num_rows и num_columns указывают число строк и столбцов таблицы, которые должны быть распечатаны. 
-# Нумерация строк и столбцов идет с единицы (подумайте, почему не с нуля).
-# Примечание: бинарной операцией называется любая операция, у которой ровно два аргумента, как, например, у операции умножения.
-import random
+# Задача 2. Создайте декоратор, повторяющий функцию заданное количество раз.
+def repeat(count):
+    def wrap_func(func):
+        def wrapper(*args, **kwargs):
+            for _ in range(count):
+                func(*args, **kwargs)
+        return wrapper
+    return wrap_func
 
-# user = input(f'Введите \n'
-#              f'()\n'
-#              f'или введите "cтоп" для завершения программы\n'
-#              f': ').lower()
 
-# n = [random.randint(0, 10) for el in range(length)]
-# p = ''.join([string[random.randint(0, len(string) - 1)] for _ in range(length)])
+count = int(input('Введите необходимое количество вызовов функции: '))
 
-# print(f'{=}')
-# print(f'{=} {}')
+@repeat(count)
+def greeting(name):
+    print(f'Привет, {name}!')
+
+
+greeting('Tom')
