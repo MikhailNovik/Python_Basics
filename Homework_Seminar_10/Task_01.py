@@ -1,15 +1,14 @@
 # Задача 1. Найдите, какая область центрального федерального округа 
 # имела наибольшую численность студентов вечерней формы обучения в 2015 году.
-import random
 
+import pandas as pd
+import seaborn as sns
 
-# user = input(f'Введите \n'
-#              f'()\n'
-#              f'или введите "cтоп" для завершения программы\n'
-#              f': ').lower()
+df = pd.read_csv('https://minobrnauki.gov.ru/upload/iblock/78d/78d77b235f7b3b14e1ac671e61435311.csv', 
+                sep=';', encoding='cp1251')
 
-# n = [random.randint(0, 10) for el in range(length)]
-# p = ''.join([string[random.randint(0, len(string) - 1)] for _ in range(length)])
+df = df.iloc[2:20, :]
 
-# print(f'{=}')
-# print(f'{=} {}')
+max_value = df['Численность студентов очно-заочная (вечерняя) форма, человек, 2015'].max()
+result = df[df['Численность студентов очно-заочная (вечерняя) форма, человек, 2015'] == max_value][['Субъект РФ','Численность студентов очно-заочная (вечерняя) форма, человек, 2015']]
+print(result)
