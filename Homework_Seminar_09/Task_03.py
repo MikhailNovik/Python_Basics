@@ -4,13 +4,14 @@
 
 import numpy as np
 
-# user = input(f'Введите \n'
-#              f'()\n'
-#              f'или введите "cтоп" для завершения программы\n'
-#              f': ').lower()
+size = int(input('Введите размер двумерного массива: '))
+size = (size, size)
+numbers = np.random.randint(0, 10, size)
+print(f'Двумерный массив:\n{numbers}')
 
-# n = [random.randint(0, 10) for el in range(length)]
-# p = ''.join([string[random.randint(0, len(string) - 1)] for _ in range(length)])
+ind_max_elem = np.argmax(numbers)
+ind_min_elem = np.argmin(numbers)
 
-# print(f'{=}')
-# print(f'{=} {}')
+print(f'Индекс максимального элемента в матрице: {ind_max_elem}')
+print(f'Индекс минимального элемента в матрице: {ind_min_elem}')
+print(f'Элементы главной диагонали матрицы:\n {np.diag(numbers)}')

@@ -3,13 +3,15 @@
 
 import numpy as np
 
-# user = input(f'Введите \n'
-#              f'()\n'
-#              f'или введите "cтоп" для завершения программы\n'
-#              f': ').lower()
+size = (5, 5)
+matrix = np.random.randint(0, 3, size)
+print(f'Двумерный массив, размером 5х5:\n{matrix}')
+result = np.corrcoef(matrix)
+print(result)
 
-# n = [random.randint(0, 10) for el in range(length)]
-# p = ''.join([string[random.randint(0, len(string) - 1)] for _ in range(length)])
-
-# print(f'{=}')
-# print(f'{=} {}')
+for row in result:
+    if [True for num in row if num == 1].count(True) >= 2:
+        print('В двумерном массиве есть одинаковые строки')
+        break
+else:
+    print('В двумерном массиве нет одинаковых строк')
